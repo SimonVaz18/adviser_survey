@@ -53,6 +53,7 @@ def update_worksheet(data,worksheet_name):
     Append a row of data to the applicable worksheet
     """ 
     print(f"\n Updating '{worksheet_name}' worksheet...")
+    worksheet = SHEET.worksheet(worksheet_name)
     worksheet.append_row(data)
     print(f"'{worksheet_name}' updated successfully.\n")
 
