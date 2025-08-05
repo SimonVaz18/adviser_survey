@@ -47,15 +47,19 @@ def get_survey_data():
                 print("Invalid input. Please enteer a valid integer.\n")
     return ratings
 
-print(get_survey_data())
+
+def update_worksheet(data,worksheet_name):
+    """
+    Append a row of data to the applicable worksheet
+    """ 
+    print(f"\n Updating '{worksheet_name}' worksheet...")
+    worksheet.append_row(data)
+    print(f"'{worksheet_name}' updated successfully.\n")
 
 """
     Function to Validate inputs
     """
-
-    """
-    Append a row of data to the applicable worksheet
-    """    
+   
     
 
     """
