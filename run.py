@@ -56,28 +56,20 @@ def update_worksheet(data,worksheet_name):
     worksheet.append_row(data)
     print(f"'{worksheet_name}' updated successfully.\n")
 
-"""
-    Function to Validate inputs
+def get_all_responses():
     """
-   
+    Gets all rows from the responses worksheet as lists of integers
+    """
+    rows = SHEET.worksheet("responses").get_all_values()
+    return [[int(cell) for cell in row] for row in rows if all(cell.isdigit() for cell in row)]
     
 
-    """
-    Function to get all responses
-    """
     
-    """
-    Calculate Averages
-    """
+def main():
+    ratings = get_survey_data()
+    update_worksheet(ratings, "responses")
 
-    """
-    Calculate Weighted Averages
-    """
+if __name__ == "__main__":
+    main()
 
-    """
-    Function to find extremes
-    """
-
-    """
-    Function to find trends
-    """
+    
