@@ -14,7 +14,14 @@ SHEET = GSPREAD_CLIENT.open('adviser_survey')
 
 # Constants 
 Questions = [
-"Service", "Product", "Price", "Website", "Delivery", "Support", "Communication", "Overall"
+    "Professionalism",
+    "Clarity of Advice",
+    "Responsiveness",
+    "Product Knowledge",
+    "Trustworthiness",
+    "Empathy",
+    "Communication",
+    "Overall Experience"
 ]
 
 
@@ -22,23 +29,27 @@ Questions = [
 
 def get_survey_data():
     """
-    Cue user to enter survey data as 8 intergers between 1-10 and returns data as integers.
+    Cue user to enter ratings as intergers between 1-10 for survey questions.
     """
 
-    while True:
-        print("Please enter 8 survey ratings (1-10) sparated by commas.")
-        print("Order " + ", ".join(Questions))
-        print("Example: 8,7,6,5,4,3,2,1\n")
+    print("\n Adviser Survey: Please rate the following categories from 1 to 10 \n")
+    ratings = []
+    for q in Questions:
+        while True:
+            try:
+                value = int(input(f"{q}: "))
+                if 1 <= value <= 10:
+                    ratings.append(value)
+                    break
+                else:
+                    print("Please enter a number between 1 and 10.\n")
+            except ValueError:
+                print("Invalid input. Please enteer a valid integer.\n")
+    return ratings
 
-        data_str = input("Enter your data here:\n")
-        data = data_str.split(",")
+print(get_survey_data())
 
-        if validate_data(data):
-            break
-
-        return [int(num) for num in data]
-    
-    """
+"""
     Function to Validate inputs
     """
 
