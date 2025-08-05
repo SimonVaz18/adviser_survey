@@ -12,8 +12,31 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('adviser_survey')
 
-sales = SHEET.worksheet('Sheet1')
+# Constants 
+Questions = [
+"Service", "Product", "Price", "Website", "Delivery", "Support", "Communication", "Overall"
+]
 
-data = sales.get_all_values()
+#Functions 
 
-print(data)
+def get_survey_data():
+    """
+    Cue user to enter survey data as 8 intergers between 1-10 and returns data as integers.
+    """
+
+    while True:
+        print("Please enter 8 survey ratings (1-10) sparated by commas.")
+        print("Order " + ", ".join(Questions))
+        print("Example: 8,7,6,5,4,3,2,1\n")
+
+        data_str = input("Enter your data here:\n")
+        data = data_str.split(",")
+
+        if validate_data(data):
+            break
+
+        return [int(num) for num in data]
+    
+    
+    
+
