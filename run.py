@@ -17,6 +17,7 @@ Questions = [
 "Service", "Product", "Price", "Website", "Delivery", "Support", "Communication", "Overall"
 ]
 
+
 #Functions 
 
 def get_survey_data():
@@ -37,6 +38,31 @@ def get_survey_data():
 
         return [int(num) for num in data]
     
-    
+    """
+    Function to Validate inputs
+    """
+
+    """
+    Append a row of data to the applicable worksheet
+    """    
     
 
+    """
+    Function to get all responses
+    """
+    
+    """
+    Calculate Averages
+    """
+
+    """
+    Calculate Weighted Averages
+    """
+
+    """
+    Function to find extremes
+    """
+
+    """
+    Function to find trends
+    """
