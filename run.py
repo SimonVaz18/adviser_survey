@@ -125,15 +125,31 @@ def main():
     ratings = get_survey_data()
     update_worksheet(ratings, "responses")
 
+    """
+    Analyse responses
+    """
+
     all_data = get_all_responses()
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
     highest, lowest = find_outliers(averages)
 
+    """
+    Add row without trend
+    """
+
     insights_row = averages + [weighted_avg, highest, lowest]
     update_worksheet(insights_row, "insights")
+
+    """
+    Calculate trend
+    """
     
     trend = calculate_trend()
+
+    """
+    Update worksheet with trend
+    """
 
     worksheet = SHEET.worksheet("insights")
     last_row = len(worksheet.get_all_values())
