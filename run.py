@@ -64,7 +64,12 @@ def get_all_responses():
     rows = SHEET.worksheet("responses").get_all_values()
     return [[int(cell) for cell in row] for row in rows if all(cell.isdigit() for cell in row)]
     
-
+def calculate_averages(data):
+    """
+    Calculates averages per question for all responses via transposing data
+    """
+    transposed = list(zip(*data))
+    return [round(sum(col) / len(col), 1) for col in transposed]
     
 def main():
     ratings = get_survey_data()
