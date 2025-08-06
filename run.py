@@ -45,7 +45,7 @@ def get_survey_data():
                 else:
                     print("Please enter a number between 1 and 10.\n")
             except ValueError:
-                print("Invalid input. Please enteer a valid integer.\n")
+                print("Invalid input. Please enter a valid integer.\n")
     return ratings
 
 
@@ -87,6 +87,10 @@ def main():
     all_data = get_all_responses()
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
+
+    insights_row = averages + [weighted_avg]
+
+    update_worksheet(insights_row, "insights")
     
 
 if __name__ == "__main__":
