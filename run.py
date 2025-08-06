@@ -92,6 +92,7 @@ def find_outliers(averages):
     highest = f"{QUESTIONS[max_index]} ({max_val}/10)"
     lowest = f"{QUESTIONS[min_index]} ({min_val}/10)"
 
+    return highest, lowest 
 
 def main():
     ratings = get_survey_data()
