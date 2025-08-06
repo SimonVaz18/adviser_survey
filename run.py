@@ -30,7 +30,7 @@ WEIGHTS = [1, 1.3, 0.9, 1.1, 1.1, 0.9, 1, 1.3]
 
 def get_survey_data():
     """
-    Cue user to enter ratings as intergers between 1-10 for survey questions.
+    Cue user to enter ratings as integers between 1-10 for survey questions.
     """
 
     print("\n Adviser Survey: Please rate the following categories from 1 to 10 \n")
@@ -81,7 +81,7 @@ def calculate_weighted_average(averages):
     return round(weighted_total / total_weights, 2)
 
 def find_outliers(averages):
-    """"
+    """
     Find highest and lowest categories per survey.
     """
     max_val = max(averages)
@@ -125,45 +125,37 @@ def main():
 
     print("Welcome to the Adviser Survey Insights app")
 
-    """
-    Get ratings
-    """
+    # Get ratings
+    
     ratings = get_survey_data()
     update_worksheet(ratings, "responses")
 
-    """
-    Analyse responses
-    """
+    # Analyse responses
+
 
     all_data = get_all_responses()
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
     highest, lowest = find_outliers(averages)
 
-    """
-    Add row without trend
-    """
+    # Add row without trend
 
     insights_row = averages + [weighted_avg, highest, lowest]
     update_worksheet(insights_row, "insights")
 
-    """
-    Calculate trend
-    """
+    # Calculate trend
     
     trend = calculate_trend()
 
-    """
-    Update worksheet with trend
-    """
+    # Update worksheet with trend
 
     worksheet = SHEET.worksheet("insights")
     last_row = len(worksheet.get_all_values())
     worksheet.update_cell(last_row, 12, trend)
 
-    """
-    Show analysis summary
-    """
+    
+    # Show analysis summary
+
     print("\n ANALYSIS COMPLETE:")
     print(f" Weighted Overall Score: {weighted_avg}/10")
     print(f" Highest Rated: {highest}")
