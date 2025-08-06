@@ -120,6 +120,12 @@ def calculate_trend():
 def main():
 
     """
+    Run all functions
+    """
+
+    print("Welcome to the Adviser Survey Insights app")
+
+    """
     Get ratings
     """
     ratings = get_survey_data()
@@ -154,9 +160,15 @@ def main():
     worksheet = SHEET.worksheet("insights")
     last_row = len(worksheet.get_all_values())
     worksheet.update_cell(last_row, 12, trend)
-    
+
+    """
+    Show analysis summary
+    """
+    print("\n ANALYSIS COMPLETE:")
+    print(f" Weighted Overall Score: {weighted_avg}/10")
+    print(f" Highest Rated: {highest}")
+    print(f" Lowest Rated: {lowest}")
+    print(f" Trend: {trend}")
 
 if __name__ == "__main__":
     main()
-
-    
