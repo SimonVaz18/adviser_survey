@@ -132,7 +132,6 @@ def main():
 
     # Analyse responses
 
-
     all_data = get_all_responses()
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
