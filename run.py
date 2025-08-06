@@ -51,7 +51,7 @@ def get_survey_data():
 
 def update_worksheet(data,worksheet_name):
     """
-    Append a row of data to the applicable worksheet
+    Append a row of data to the applicable worksheet.
     """ 
     print(f"\n Updating '{worksheet_name}' worksheet...")
     worksheet = SHEET.worksheet(worksheet_name)
@@ -60,14 +60,14 @@ def update_worksheet(data,worksheet_name):
 
 def get_all_responses():
     """
-    Gets all rows from the responses worksheet as lists of integers
+    Gets all rows from the responses worksheet as lists of integers.
     """
     rows = SHEET.worksheet("responses").get_all_values()
     return [[int(cell) for cell in row] for row in rows if all(cell.isdigit() for cell in row)]
     
 def calculate_averages(data):
     """
-    Calculates averages per question for all responses via transposing data
+    Calculates averages per question for all responses via transposing data.
     """
     transposed = list(zip(*data))
     return [round(sum(col) / len(col), 1) for col in transposed]
@@ -82,7 +82,7 @@ def calculate_weighted_average(averages):
 
 def find_outliers(averages):
     """"
-    Find highest and lowest categories per survey
+    Find highest and lowest categories per survey.
     """
     max_val = max(averages)
     min_val = min(averages)
@@ -94,6 +94,29 @@ def find_outliers(averages):
 
     return highest, lowest 
 
+
+def calculate_trend():
+    """
+    Calculates the trend of weighted average based on insights.
+    """
+    insights = SHEET.worksheet("insights").get_all_values()
+    if len(insights) < 2:
+        return "N/A"
+    
+    try:
+        previous = float(insights[-2][8])
+        current = float(insights[-1][8])
+    except (ValueError, IndexError)
+        return "N/A"
+    
+    if current > previous:
+        return "Improving"
+    elif current < previous:
+        return "Declining"
+    else:
+        return "Steady"
+
+
 def main():
     ratings = get_survey_data()
     update_worksheet(ratings, "responses")
@@ -102,8 +125,9 @@ def main():
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
     highest, lowest = find_outliers(averages)
+    trend = calculate_trend()
 
-    insights_row = averages + [weighted_avg, highest, lowest]
+    insights_row = averages + [weighted_avg, highest, lowest, trend]
 
     update_worksheet(insights_row, "insights")
     
