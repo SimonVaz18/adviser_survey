@@ -106,7 +106,7 @@ def calculate_trend():
     try:
         previous = float(insights[-2][8])
         current = float(insights[-1][8])
-    except (ValueError, IndexError)
+    except (ValueError, IndexError):
         return "N/A"
     
     if current > previous:
@@ -118,6 +118,10 @@ def calculate_trend():
 
 
 def main():
+
+    """
+    Get ratings
+    """
     ratings = get_survey_data()
     update_worksheet(ratings, "responses")
 
@@ -125,11 +129,15 @@ def main():
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
     highest, lowest = find_outliers(averages)
+
+    insights_row = averages + [weighted_avg, highest, lowest]
+    update_worksheet(insights_row, "insights")
+    
     trend = calculate_trend()
 
-    insights_row = averages + [weighted_avg, highest, lowest, trend]
-
-    update_worksheet(insights_row, "insights")
+    worksheet = SHEET.worksheet("insights")
+    last_row = len(worksheet.get_all_values())
+    worksheet.update_cell(last_row, 12, trend)
     
 
 if __name__ == "__main__":
