@@ -24,6 +24,7 @@ Questions = [
     "Overall Experience"
 ]
 
+Weights = [1, 1.3, 0.9, 1.1, 1.1, 0.9, 1, 1.3]
 
 #Functions 
 
@@ -70,10 +71,15 @@ def calculate_averages(data):
     """
     transposed = list(zip(*data))
     return [round(sum(col) / len(col), 1) for col in transposed]
+
+
     
 def main():
     ratings = get_survey_data()
     update_worksheet(ratings, "responses")
+
+    all_data = get_all_responses()
+    
 
 if __name__ == "__main__":
     main()
