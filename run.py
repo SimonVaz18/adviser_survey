@@ -79,7 +79,20 @@ def calculate_weighted_average(averages):
     weighted_total = sum(avg * weight for avg, weight in zip(averages,WEIGHTS))
     total_weights = sum(WEIGHTS)
     return round(weighted_total / total_weights, 2)
-    
+
+def find_outliers(averages):
+    """"
+    Find highest and lowest categories per survey
+    """
+    max_val = max(averages)
+    min_val = min(averages)
+    max_index = averages.index(max_val)
+    min_index = averages.index(min_val)
+
+    highest = f"{QUESTIONS[max_index]} ({max_val}/10)"
+    lowest = f"{QUESTIONS[min_index]} ({min_val}/10)"
+
+
 def main():
     ratings = get_survey_data()
     update_worksheet(ratings, "responses")
@@ -87,8 +100,9 @@ def main():
     all_data = get_all_responses()
     averages = calculate_averages(all_data)
     weighted_avg = calculate_weighted_average(averages)
+    highest, lowest = find_outliers(averages)
 
-    insights_row = averages + [weighted_avg]
+    insights_row = averages + [weighted_avg, highest, lowest]
 
     update_worksheet(insights_row, "insights")
     
