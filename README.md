@@ -115,3 +115,34 @@ The code is executed as below:
 
 ### Google Sheets Insights Sheet
 ![insights-sheet](assets/images/insights_sheet.png)
+
+## Testing 
+
+This section outlines the manual testing carried out to ensure that the Adviser Survey Insights Tool functions as intended. Each core feature was tested against expected outcomes, including input validation, spreadsheet interaction, and insight calculations.
+
+### Manual Testing
+<table>
+  <thead>
+    <tr>
+      <th>Test No.</th>
+      <th>Feature</th>
+      <th>Test Action</th>
+      <th>Expected Outcome</th>
+      <th>Pass/Fail</th>
+    </tr>
+  </thead>
+   <tbody>
+    <tr>
+      <td>1</td>
+      <td>get_survey_data() - Valid Input</td>
+      <td>Enter 8 valid integers (1–10)</td>
+      <td>All values accepted and returned as a list</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>get_survey_data() - Invalid Number</td>
+      <td>Enter a number outside 1–10</td>
+      <td>Shows error and prompts re-entry</td>
+      <td>Pass</td>
+    </tr>
