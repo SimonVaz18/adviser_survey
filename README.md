@@ -1,13 +1,13 @@
-# Adviser Survery Insights Tool
+# Adviser Survey Insights Tool
 
 Project 3 - Simon Vaz
 
 View github repository:
-Vieww live deployed project on Heroku: 
+View live deployed project on Heroku: 
 
 ## Overview
 
-The **Aviser Survery Insights Tool** is a phyton based terminal application that helps an Investment Management company track and analyse the performace of their advisers based on client/investor feedback. The tool prompts users to input 8 different ratings on different service areas. It then imports and stores the data in a Google Sheet. Calculations via functions implemented in the code provide meaningful insights such as weighted overall score, performance trends and category averages. This should help the firm make data-informed decisions to improve client experience.
+The **Aviser Survery Insights Tool** is a python based terminal application that helps an Investment Management company track and analyse the performance of their advisers based on client/investor feedback. The tool prompts users to input 8 different ratings on different service areas. It then imports and stores the data in a Google Sheet. Calculations via functions implemented in the code provide meaningful insights such as weighted overall score, performance trends and category averages. This should help the firm make data-informed decisions to improve client experience.
 
 ## Purpose 
 
@@ -68,20 +68,20 @@ This function calculates the average rating per category from all recorded respo
 
 ---
 
-### 5. Function: 'calculate_weighted_average
+### 5. Function: 'calculate_weighted_average'
 
 Constants have been set at the start of the code that assigns weights to each survey question based on how important the category is. These weights are used in the function to calculate a more meaningful overall score across all categories.
 
 1. The 'averages' in 'calculate_weighted_average' is the average score taken from the 'calculate_averages' function
 2. Each score is multiplied by its weight in order to give more points to more important questions
-3. All the new weighted scores are summed and all the wweights are summed
-4. The total score is then divided by the total weights to give a funal weighted average score
+3. All the new weighted scores are summed and all the weights are summed
+4. The total score is then divided by the total weights to give a final weighted average score
 
 ---
 
 ### 6. Function: 'find_outliers'
 
-This is a simple function used to identify the highest and lowest rated categories. Averages are input and indexed against the questions match thee highest/lowest score with a particular question. The function then returns a readable sting displaying the results. 
+This is a simple function used to identify the highest and lowest rated categories. Averages are input and indexed against the questions match the highest/lowest score with a particular question. The function then returns a readable string displaying the results. 
 
 The intention of this function is to provide quick insights into where advisers are doing particularly well and where improvements are needed.
 
@@ -97,7 +97,7 @@ The code is executed as below:
 1. The insights sheet is accessed to retrieve all past insights rows as a list of lists
 2. A check is in place to ensure there is enough data i.e. 2 entries. If there is not, 'N/A' is returned
 3. The previous and current weighted average values are extracted from the 9th column in the insights sheet
-4. These 2 scores are then compared and a readable ouput is output
+4. These 2 scores are then compared and the result is returned as a user-friendly message
 
 ## Supporting Imagery
 
@@ -230,7 +230,7 @@ This section outlines the manual testing carried out to ensure that the Adviser 
 - An optional text feedback input could be added. This might give management greater context as to how the ratings were decided and provide further action points.
 
 ## Technologies
-This project was developed using Python. The site is version-controlled by Git and hosted on Github Pages. VS Code was used as the code editor environment.
+This project was developed using Python. The site is version-controlled by Git and hosted on Heroku. VS Code was used as the code editor environment.
 
 ## Deployment
 - The project was deployed to Heroku using a connected GitHub repository containing all source files and dependencies.
@@ -239,7 +239,7 @@ This project was developed using Python. The site is version-controlled by Git a
 - Once deployed, the application can be accessed by visiting the Heroku app URL in the browser. 
 
 ## Credits
-Throughout the site build I useed the following sources:
+Throughout the site build I used the following sources:
 - [W3Schools.com](https://www.w3schools.com/)
 - Resources provided throughout the lessons from the Code Institute
 - References from the Code Institute love-sandwiches project
