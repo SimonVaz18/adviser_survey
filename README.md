@@ -1,32 +1,18 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Adviser Survery Insights Tool
 
-Welcome,
+## Overview
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+The **Aviser Survery Insights Tool** is a phyton based terminal application that helps an Investment Management company track and analyse the performace of their advisers based on cliend/investor feedback. The tool prompts users to input 8 different ratings different service areas. It then imports and stores the data in a Google Sheet. Calculations via functions implemented in the code provide meaningful insights such as weighted overall score, performance trends and category averages. This should help the firm make data-informed decisions to improve client experience.
 
-## Reminders
+## Purpose 
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+- Quantifies strengths and weaknesses of adviser performance
+- Calculates a weighted average to prioritise the most important aspects
+- Shows trends in performance over time
+- Displays and stores raw data as well as insights for transparency and reporting
 
-## Creating the Heroku app
+## Intended Users 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+- Administrators - input the client feedback
+- Management teams - review and act on adviser quality
+- Advisers - Review and reflect on responses/insights to create actionable objectives
