@@ -3,7 +3,7 @@
 Project 3 - Simon Vaz
 
 View github repository:
-View live deployed project on Heroku: 
+View live deployed project on Heroku: https://adviser-survey-ccbcbf9f56ed.herokuapp.com/
 
 --
 
@@ -18,6 +18,8 @@ View live deployed project on Heroku:
 - Technologies
 - Deployment
 - Credits
+
+-- 
 
 ## Overview
 
@@ -237,7 +239,7 @@ This section outlines the manual testing carried out to ensure that the Adviser 
 ![python-checker](assets/images/python_checker.png)
 
 ## Bugs/Improvements
-- A bug I found while testing was the calcualte_trend function was being called too early in the main() thus comparing the previous-to-last row and the current last row before the new row was added. To fix this, I adjusted the insights row to not include trend then re-called the sheet to calculate the trend after the insights sheet was updated.
+- A bug I found while testing was the 'calculatete_trend' function was being called too early in the main() thus comparing the previous-to-last row and the current last row before the new row was added. To fix this, I adjusted the insights row to not include trend then re-called the sheet to calculate the trend after the insights Sheet was updated.
 - When the insights worksheet is missing or misnamed, the program crashes with a WorksheetNotFound error. A future improvement would be to add a clearer error message or create the worksheet automatically if it doesn't exist.
 - Each row of insights lacks a date or timestamp, making it hard to track when a survey was submitted. In a future version, a datetime field could be automatically appended to each new response.
 - Trend could be calculated over a larger data-set e.g. last 2 entries, last 5 entries and last 10 entries. This would be dependent on sample sizes however could aid in building a better long term picture of trends.
