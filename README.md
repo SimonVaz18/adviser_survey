@@ -5,6 +5,20 @@ Project 3 - Simon Vaz
 View github repository:
 View live deployed project on Heroku: 
 
+--
+
+## Table of Contents
+- Overview
+- Purpose
+- Intended Users
+- Features
+- Supporting Imagery
+- Testing
+- Bugs/Improvements
+- Technologies
+- Deployment
+- Credits
+
 ## Overview
 
 The **Aviser Survery Insights Tool** is a python based terminal application that helps an Investment Management company track and analyse the performance of their advisers based on client/investor feedback. The tool prompts users to input 8 different ratings on different service areas. It then imports and stores the data in a Google Sheet. Calculations via functions implemented in the code provide meaningful insights such as weighted overall score, performance trends and category averages. This should help the firm make data-informed decisions to improve client experience.
