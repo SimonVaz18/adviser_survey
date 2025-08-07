@@ -103,3 +103,15 @@ The code is executed as below:
 
 ### Initial Prompt
 ![initial-prompt](assets/images/initial_prompt.png)
+
+### All but one questions answered to show question structure
+![question-structure](assets/images/all_but_one_question_answered.png)
+
+### Final Output
+![final-output](assets/images/final_output.png)
+
+### Google Sheets Responses Sheet
+![responses-sheet](assets/images/responses_sheet.png)
+
+### Google Sheets Insights Sheet
+![insights-sheet](assets/images/insights_sheet.png)
