@@ -146,3 +146,75 @@ This section outlines the manual testing carried out to ensure that the Adviser 
       <td>Shows error and prompts re-entry</td>
       <td>Pass</td>
     </tr>
+    <tr>
+      <td>3</td>
+      <td>get_survey_data() - Non-integer</td>
+      <td>Enter letters instead of a number</td>
+      <td>Error shown; re-prompted</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>update_worksheet()</td>
+      <td>Append valid row to "responses"</td>
+      <td>Row is added to worksheet</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>get_all_responses()</td>
+      <td>Pull data from "responses" tab</td>
+      <td>Returns clean list of integer lists</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>calculate_averages()</td>
+      <td>Use list of responses to calculate per-question average</td>
+      <td>Returns 8 floats rounded to 1dp</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>calculate_weighted_average()</td>
+      <td>Apply weights to averages list</td>
+      <td>Returns overall weighted average (float)</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>find_outliers()</td>
+      <td>Identify highest/lowest scoring questions</td>
+      <td>Returns strings of highest and lowest</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>calculate_trend() – Not enough data</td>
+      <td>Run with fewer than 2 rows in "insights"</td>
+      <td>Returns "N/A"</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>calculate_trend() – Improving</td>
+      <td>Run with increasing weighted score</td>
+      <td>Returns "Improving"</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>calculate_trend() – Declining</td>
+      <td>Run with decreasing weighted score</td>
+      <td>Returns "Declining"</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>End-to-End Test</td>
+      <td>Run full survey with valid data</td>
+      <td>Updates both worksheets and shows summary in terminal</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
