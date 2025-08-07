@@ -2,7 +2,7 @@
 
 Project 3 - Simon Vaz
 
-View github repository:
+View github repository: https://github.com/SimonVaz18/adviser_survey
 View live deployed project on Heroku: https://adviser-survey-ccbcbf9f56ed.herokuapp.com/
 
 --
