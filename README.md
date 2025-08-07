@@ -99,3 +99,7 @@ The code is executed as below:
 3. The previous and current weighted average values are extracted from the 9th column in the insights sheet
 4. These 2 scores are then compared and a readable ouput is output
 
+## Supporting Imagery
+
+### Initial Prompt
+![initial-prompt](assets/images/initial_prompt.png)
