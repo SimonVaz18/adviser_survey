@@ -228,3 +228,18 @@ This section outlines the manual testing carried out to ensure that the Adviser 
 - Each row of insights lacks a date or timestamp, making it hard to track when a survey was submitted. In a future version, a datetime field could be automatically appended to each new response.
 - Trend could be calculated over a larger data-set e.g. last 2 entries, last 5 entries and last 10 entries. This would be dependent on sample sizes however could aid in building a better long term picture of trends.
 - An optional text feedback input could be added. This might give management greater context as to how the ratings were decided and provide further action points.
+
+## Technologies
+This project was developed using Python. The site is version-controlled by Git and hosted on Github Pages. VS Code was used as the code editor environment.
+
+## Deployment
+- The project was deployed to Heroku using a connected GitHub repository containing all source files and dependencies.
+- The creds.json file used for Google Sheets authentication was securely added via Heroku's Config Vars, ensuring sensitive data isn't exposed in the codebase.
+- A PORT variable was set to 8000 in the Config Vars to ensure Heroku assigned the correct port for the app to run.
+- Once deployed, the application can be accessed by visiting the Heroku app URL in the browser. 
+
+## Credits
+Throughout the site build I useed the following sources:
+- [W3Schools.com](https://www.w3schools.com/)
+- Resources provided throughout the lessons from the Code Institute
+- References from the Code Institute love-sandwiches project
